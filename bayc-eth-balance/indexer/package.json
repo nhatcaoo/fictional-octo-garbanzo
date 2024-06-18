@@ -1,0 +1,24 @@
+{
+  "name": "indexer",
+  "version": "0.1.0",
+  "repository": "https://github.com/SInoLabs-Blockchain/Indexer",
+  "license": "MIT",
+  "scripts": {
+    "codegen": "graph codegen",
+    "build": "graph build",
+    "create-local": "graph create indexer --node http://127.0.0.1:8020",
+    "deploy-local": "graph deploy indexer --ipfs http://127.0.0.1:5001 --node http://127.0.0.1:8020"
+  },
+  "devDependencies": {
+    "@graphprotocol/graph-ts": "^0.31.0",
+    "typescript": "^5.2.2"
+  },
+  "dependencies": {
+    "@graphprotocol/graph-cli": "^0.57.0",
+    "babel-polyfill": "^6.26.0",
+    "babel-register": "^6.26.0",
+    "truffle": "^5.0.4",
+    "truffle-contract": "^4.0.5",
+    "truffle-hdwallet-provider": "^1.0.4"
+  }
+}

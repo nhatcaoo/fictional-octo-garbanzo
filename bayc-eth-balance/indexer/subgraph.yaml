@@ -1,0 +1,26 @@
+specVersion: 0.0.4
+description: Bored Ape Yacht Club Transfers
+repository: https://github.com/graphprotocol/graph-toolings
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum/contract
+    name: bayc
+    network: mainnet
+    source:
+      address: "0xBC4CA0EdA7647A8aB7C2061c2E118A18a936f13D"
+      abi: bayc
+      startBlock: 12287507
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.6
+      language: wasm/assemblyscript
+      entities:
+        - TransferEvent
+      abis:
+        - name: bayc
+          file: ./abis/bayc.json
+      eventHandlers:
+        - event: Transfer(indexed address,indexed address,indexed uint256)
+          handler: handleTransfer
+      file: ./src/mapping.ts

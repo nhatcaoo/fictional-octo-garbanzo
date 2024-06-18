@@ -1,0 +1,8 @@
+type TransferEvent @entity {
+  id: ID!
+  from: Bytes!
+  to: Bytes!
+  tokenId: BigInt!
+  timestamp: BigInt!
+  blockNumber: BigInt!
+}
